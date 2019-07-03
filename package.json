@@ -6,16 +6,18 @@
   "scripts": {
     "start": "ts-node-dev --respawn --transpileOnly lib/index.ts",
     "prettier": "prettier --write \"lib/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iseekTo/tsStudio.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "TypeScript",
+    "study"
+  ],
+  "author": "lyb",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/iseekTo/tsStudio/issues"
   },
