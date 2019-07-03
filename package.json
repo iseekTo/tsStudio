@@ -5,22 +5,29 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --respawn --transpileOnly lib/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier": "prettier --write \"lib/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iseekTo/tsStudio.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "TypeScript",
+    "study"
+  ],
+  "author": "lyb",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/iseekTo/tsStudio/issues"
   },
   "homepage": "https://github.com/iseekTo/tsStudio#readme",
   "devDependencies": {
     "@types/node": "^12.0.10",
+    "prettier": "^1.18.2",
     "ts-node-dev": "^1.0.0-pre.40",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.5.2"
   }
 }

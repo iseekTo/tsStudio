@@ -1,16 +1,4 @@
+import { generErrorObj } from "./question/error";
 
-type places = string[] | string;
-
-interface book {
-    price?: number
-    label?: places
-    where?: places
-}
-
-let book: book = {
-    price: 200,
-    label: '封神',
-    where: '天河以南'
-}
-
-console.log(book, '111') 
+let gener = generErrorObj();
+console.log("push之后的结果：", gener);
