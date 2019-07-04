@@ -1,1 +1,1 @@
-export type stringOrArr = string[] | string;
+export type stringOrArr = string[] | string
