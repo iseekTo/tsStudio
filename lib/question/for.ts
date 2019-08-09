@@ -17,3 +17,20 @@ let is_boolean: bs = {
     small: '1',      // error 
     large: true      // success
 }
+
+// 方式三 先赋值 后取类型
+const typeParams = {
+    str: '',
+    reg: /^\d+/,
+    bol: false,
+    arr: ['1', '2', true, {a: 1}]
+}
+
+type tys = typeof typeParams;
+
+export let els: tys = {
+    arr: [
+        '1'
+    ],
+    reg: /'1234'/
+}

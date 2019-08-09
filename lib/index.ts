@@ -1,7 +1,7 @@
 import { generErrorObj, reveiveResult } from './question/error'
 import { returnFn } from './question/returnfn'
 import { tryData } from './question/promise'
-import { vals } from './question/for'
+import { vals, els } from './question/for'
 
 tryData().then(res => console.log('data：', res))
 
@@ -32,4 +32,3 @@ let val: vals = {
     middle: '',
     large: 1
 }
-console.log(val)
