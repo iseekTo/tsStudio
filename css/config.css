@@ -1,0 +1,74 @@
+/* select内容居中显示、下拉内容右对齐 */
+select {
+    text-align: center;
+    text-align-last: center;
+}
+select option {
+    direction: rtl;
+}
+
+/* 修改input输入框中光标的颜色不改变字体的颜色 */
+input {
+    color:  #fff;
+    caret-color: red;
+}
+
+/* 修改input 输入框中 placeholder 默认字体样式 */
+/* webkit内核的浏览器  */
+input::-webkit-input-placeholder {
+    color: #c2c6ce;
+}
+/* Firefox版本4-18  */
+input:-moz-placeholder {
+    color: #c2c6ce;
+}
+/* Firefox版本19+ */
+input::-moz-placeholder {
+    color: #c2c6ce;
+}
+/* IE浏览器 */
+input:-ms-input-placeholder {
+    color: #c2c6ce;
+}
+
+/* transfrom的rotate属性在span标签下失效 */
+span {
+    display: inline-block;
+}
+
+/* 使用硬件加速 */
+.wrap {
+    transform: translateZ(0);
+}
+
+/* cursor属性 */
+.wrap {
+    cursor: pointer; /* 小手指；*/
+    cursor: help; /* 箭头加问号；*/
+    cursor: move;   /* 移动光标 */
+    cursor: crosshair;  /* 十字光标 */
+    cursor: wait;   /* 转圈圈 */
+}
+
+/* 自动换行 */
+.wrap {
+  word-wrap: break-word;
+  word-break: normal;
+}
+
+/* 单行文本 */
+.wrap {
+	overflow:hidden;    /*超出部分隐藏*/
+	text-overflow:ellipsis;   /*超出部分显示省略号*/
+	white-space:nowrap;   /*规定段落中的文本不进行换行 */
+}
+
+/* 多行文本 */
+.wrap {
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;   /* 将对象作为弹性伸缩盒子模型显示  *必须结合的属性* */
+    -webkit-box-orient: vertical;   /* 设置伸缩盒对象的子元素的排列方式  *必须结合的属性* */
+    -webkit-line-clamp: 3;   /* 用来限制在一个块元素中显示的文本的行数  */
+    word-break: break-all;   /* 让浏览器实现在任意位置的换行 *break-all为允许在单词内换行*  */
+}

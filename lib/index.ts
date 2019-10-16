@@ -5,6 +5,7 @@ import { vals } from './question/for'
 
 tryData().then(res => console.log('data：', res))
 
+
 // let gener = generErrorObj();
 // console.log("push之后的结果：", gener);
 
