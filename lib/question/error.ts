@@ -1,4 +1,4 @@
-import { stringOrArr } from '../util'
+export type stringOrArr = string[] | string
 
 interface IBook {
     price?: number

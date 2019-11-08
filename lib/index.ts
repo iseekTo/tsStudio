@@ -1,7 +1,19 @@
 import { generErrorObj, reveiveResult } from './question/error'
-import { returnFn } from './question/returnfn'
 import { tryData } from './question/promise'
-import { vals } from './question/for'
+console.log('--------------------------------------------')
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 tryData().then(res => console.log('da2222222ta：', res))
 
@@ -25,10 +37,3 @@ tryData().then(res => console.log('da2222222ta：', res))
 // returnFn(() => {
 //     console.log(['1', '2'], '函数返回值')
 // })
-
-let val: vals = {
-    small: '1',
-    middle: '',
-    large: 1,
-}
-console.log(val)
