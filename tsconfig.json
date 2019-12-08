@@ -11,9 +11,18 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "noImplicitAny": true,
-    "declaration": true
+    "declaration": true,
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "include": [
+    ".lib/.ts",
+    "lib/**/*",    
+    "./index.d.ts",
+  ],
+  "typeRoots": [
+    "./index.d.ts",
+    "./node_modules/@types"
+  ],
 }
