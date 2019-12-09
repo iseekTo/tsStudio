@@ -1,4 +1,3 @@
-
 export interface IProp {
     readonly id: number
     name: string
@@ -9,12 +8,9 @@ export function getObjOfValue<T, K extends keyof T>(obj: T, key: K) {
     return obj[key]
 }
 
-
-
 let f: IProp = {
     id: 1,
-    name: '2222'
+    name: '2222',
 }
 
-
-export let base = <F>(p: F) => p;
+export let base = <F>(p: F) => p

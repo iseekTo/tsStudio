@@ -6,6 +6,7 @@
   "typings": "index.d.ts",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpileOnly lib/index.ts",
+    "bet": "npm run prettier && npm run lint",
     "prettier": "prettier --config ./.prettierrc --write \"lib/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },

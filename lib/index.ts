@@ -1,7 +1,7 @@
 import { generErrorObj, reveiveResult } from './question/error'
-import { tryData } from './question/promise';
+import { tryData } from './question/promise'
 import { Little } from './design/designMode'
-import { getObjOfValue, base } from './typeStudent/keyof';
+import { getObjOfValue, base } from './typeStudent/keyof'
 import { Dictory } from './泛型/q'
 console.log('--------------------------------------------')
 
@@ -9,26 +9,24 @@ tryData().then(res => console.log('da2222222ta：', res))
 
 let o = {
     id: 2,
-    name: 'tom'
+    name: 'tom',
 }
 
 let name = getObjOfValue(o, 'id')
-console.log(name);
+console.log(name)
 
 let ba = base<string[]>(['123', '2'])
-console.log(ba);
-
+console.log(ba)
 
 // 三斜线指令的运用
 let pro: IPos = {
     some: 'Android',
     people: {
         id: 1,
-        sex: 'boy'
-    }
+        sex: 'boy',
+    },
 }
-console.log(pro);
-
+console.log(pro)
 
 interface IEs {
     one: boolean
@@ -38,22 +36,20 @@ interface IEs {
 
 // 根据第一个参数，对应第一个参数的类型
 function foo<K extends keyof IEs>(key: K, val: IEs[K]) {
-    // 
+    //
 }
 foo('fou', /123/)
 
-
-
 let trys: Dictory<number> = {
     l: 2,
-    ow: 31
+    ow: 31,
 }
 
 let bol: Dictory<boolean> = {
     isShow: false,
-    isGotoOutUrl: true
+    isGotoOutUrl: true,
 }
-console.log(trys, bol);
+console.log(trys, bol)
 
 type Base<T> = {
     book: T
@@ -62,13 +58,8 @@ type Base<T> = {
 
 let books: Base<string[]> = {
     book: ['1', 'tt'],
-    price: 23.12
+    price: 23.12,
 }
-
-
-
-
-
 
 // let gener = generErrorObj();
 // console.log("push之后的结果：", gener);
