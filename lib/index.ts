@@ -38,7 +38,7 @@ interface IEs {
 function foo<K extends keyof IEs>(key: K, val: IEs[K]) {
     //
 }
-foo('fou', /123/)
+foo('fou', /ee/gim)
 
 let trys: Dictory<number> = {
     l: 2,
