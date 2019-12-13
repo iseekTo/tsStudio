@@ -77,3 +77,5 @@ type orderItem<T extends string | number> = T extends string ? f1 : f2
 
 type extract<Q, W> = Q extends W ? Q : never
 type fls = extract<'1' | '2' | '3', '1' | '2'>
+
+type typeKeys<T> = T[keyof T]
