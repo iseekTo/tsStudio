@@ -19,6 +19,19 @@ console.log(ba)
 
 
 
+const littleNumbers = [
+    { a: 1, b: '123' },
+    { a: 2, b: '22223' },
+    { a: 3, b: '3123' },
+] as const;
+type aa = typeof littleNumbers[number]['b']
+let fs: aa = '3123'
+
+
+
+
+
+
 
 // 三斜线指令的运用
 let pro: IPos = {
