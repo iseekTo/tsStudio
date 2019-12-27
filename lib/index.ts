@@ -1,8 +1,8 @@
 import { generErrorObj, reveiveResult } from './question/error'
 import { tryData } from './question/promise'
-import { Little } from './design/designMode'
 import { getObjOfValue, base } from './typeStudent/keyof'
 import { Dictory } from './泛型/q'
+import { isString } from './util/util'
 console.log('--------------------------------------------')
 
 tryData().then(res => console.log('da2222222ta：', res))
@@ -11,12 +11,14 @@ let o = {
     id: 2,
     name: 'tom',
 }
-
 let name = getObjOfValue(o, 'id')
 console.log(name)
 
 let ba = base<string[]>(['123', '2'])
 console.log(ba)
+
+
+
 
 // 三斜线指令的运用
 let pro: IPos = {
@@ -38,7 +40,7 @@ interface IEs {
 function foo<K extends keyof IEs>(key: K, val: IEs[K]) {
     //
 }
-foo('fou', /ee/gim)
+foo('one', !!0)
 
 let trys: Dictory<number> = {
     l: 2,
