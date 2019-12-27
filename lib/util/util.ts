@@ -3,5 +3,10 @@
  * @param sourceVal 源字符串
  * @param symbols 分隔符
  * */
-export let delAfterStr = (sourceVal: string, symbols: string) =>
+export const delAfterStr = (sourceVal: string, symbols: string) =>
     sourceVal.substring(0, sourceVal.indexOf(symbols))
+
+export const isString = (str: string): str is string => typeof str === 'string'
+
+export const isBoolean = (bol: boolean): bol is boolean => typeof bol === 'boolean'
+
