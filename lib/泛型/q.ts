@@ -44,8 +44,8 @@ interface testPick {
     age: number
 }
 
-export function fn<T extends keyof testPick>(k: T) {}
-fn('age')
+export function fn<T extends keyof testPick>(k: T, v: testPick[T]) {}
+fn('name', 'lisa')  // is right
 // pick 实现解析 接收一个类型集合，第二个参数是需要 [取出] 的键(第一个类型上的某个键)
 // P用来实现改变后的字符串K，值是对应的类型，写法也就是 T[P] -- testPick[name] --> string
 export type LPick<T, K extends keyof T> = {
