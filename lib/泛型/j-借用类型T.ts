@@ -7,6 +7,7 @@ interface Match<Params extends { [K in keyof Params]?: any } = {}> {
     url: string
 }
 
+// 请求列表通用类型体
 type requestParams<T> = {
     res: T,
     currentPage: number,
