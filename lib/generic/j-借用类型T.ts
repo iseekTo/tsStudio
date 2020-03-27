@@ -1,27 +1,27 @@
 interface Match<Params extends { [K in keyof Params]?: any } = {}> {
-    params: Params
-    inExact: boolean
-    path: string
-    url: string
+    params: Params;
+    inExact: boolean;
+    path: string;
+    url: string;
 }
 
 // 请求列表通用类型体
 type requestParams<T> = {
-    res: T
-    currentPage: number
-    page: number
-    total: number
-}
+    res: T;
+    currentPage: number;
+    page: number;
+    total: number;
+};
 
 type school = {
-    name: string
-    className: string
-    much: number
-}
+    name: string;
+    className: string;
+    much: number;
+};
 
 // 也可这样
-type _school = 'name' | 'className'
-type _s_school = Record<_school, string>
+type _school = 'name' | 'className';
+type _s_school = Record<_school, string>;
 
 let someVariv: Match<school> = {
     params: {
@@ -32,4 +32,4 @@ let someVariv: Match<school> = {
     inExact: true,
     path: '../todo',
     url: 'google',
-}
+};
