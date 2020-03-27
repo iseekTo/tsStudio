@@ -1,7 +1,7 @@
 import { generErrorObj, reveiveResult } from './question/error'
 import { tryData } from './question/promise'
 import { getObjOfValue, base } from './typeStudent/keyof'
-import { Dictory } from './泛型/q'
+import { Dictory } from './generic/q'
 import { isString } from './util/util'
 console.log('--------------------------------------------')
 
