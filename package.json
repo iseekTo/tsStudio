@@ -1,5 +1,5 @@
 {
-  "name": "tsStudio",
+  "name": "ts_inic",
   "version": "1.0.0",
   "description": "Record the use of typescript and its combination in work",
   "main": "index.js",
@@ -8,7 +8,8 @@
     "dev": "ts-node-dev --respawn --transpileOnly lib/index.ts",
     "bet": "npm run prettier && npm run lint",
     "prettier": "prettier --config ./.prettierrc --write \"lib/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json -c tslint.json"
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "cov": "./node_modules/.bin/mocha -r ./node_modules/ts-node/register tests/*.ts"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
   },
   "homepage": "https://github.com/iseekTo/tsStudio#readme",
   "devDependencies": {
-    "@types/mongodb": "^3.3.11",
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
     "@types/node": "^12.0.10",
     "prettier": "^1.18.2",
     "ts-node-dev": "^1.0.0-pre.40",
@@ -34,7 +36,7 @@
     "typescript": "^3.5.2"
   },
   "dependencies": {
-    "@types/chai": "^4.2.11",
-    "chai": "^4.2.0"
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1"
   }
 }
