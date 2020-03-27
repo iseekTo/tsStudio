@@ -3,10 +3,6 @@
 
 declare const DEV: string;
 
-declare type ICommon = {
-    title: string
-}
-
 declare interface IPos extends IOpt {
     some: string
 }
@@ -18,5 +14,7 @@ declare interface IPos extends IOpt {
 declare const yourModuleName: any;
 
 // 2、在根目录新建 modules.d.ts
-declare module 'yourModuleName';
+declare module 'yourModuleName' {
+    export = yourModuleName
+}
 

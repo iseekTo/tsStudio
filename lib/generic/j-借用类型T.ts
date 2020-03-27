@@ -1,5 +1,3 @@
-
-
 interface Match<Params extends { [K in keyof Params]?: any } = {}> {
     params: Params
     inExact: boolean
@@ -9,15 +7,15 @@ interface Match<Params extends { [K in keyof Params]?: any } = {}> {
 
 // 请求列表通用类型体
 type requestParams<T> = {
-    res: T,
-    currentPage: number,
-    page: number,
+    res: T
+    currentPage: number
+    page: number
     total: number
 }
 
 type school = {
-    name: string,
-    className: string,
+    name: string
+    className: string
     much: number
 }
 
@@ -29,9 +27,9 @@ let someVariv: Match<school> = {
     params: {
         name: 'vo',
         className: '7-01',
-        much: 8000
+        much: 8000,
     },
     inExact: true,
     path: '../todo',
-    url: 'google'
+    url: 'google',
 }

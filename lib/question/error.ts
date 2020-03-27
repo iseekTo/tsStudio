@@ -11,7 +11,7 @@ let book: IBook = {
     price: 200,
     label: 'GG',
     where: '天河以南',
-    other_key_1: 'other_key_2',
+    other_key_1: 'other_key_1',
     other_key_2: 'other_key_2',
 }
 
@@ -39,11 +39,17 @@ let suchNumber: number[] = [1, 2, 3, 4, 5]
 let otherArr: ReadonlyArray<number> = suchNumber
 export let reveiveResult: number[]
 // otherArr[1] = 2  // error.  error msg: 类型“readonly number[]”中的索引签名仅允许读取
-// otherArr.push(1) // error.  error msg: 类型“readonly number[]”上不存在属性“push”。(IDE的智能提示会直接忽略掉可以更改原数组的方法)
-// otherArr.length = 123 // error. error msg: Cannot assign to 'length' because it is a read-only property.  只读属性不可更改长度
 
-// suchNumber = otherArr     // error.  error msg: 只读属性的数组(或其他类型)不可赋值于其他变量
+// error msg: 类型“readonly number[]”上不存在属性“push”。
+// otherArr.push(1)          // fail error!
 
-suchNumber.push(123, 999, 312, 0o1) as number // 改变只读属性的办法是：使用类型断言重写此变量(注意：不支持01010110 这样的八进制，但是支持类似0o1)。
+// error msg: Cannot assign to 'length' because it is a read-only property.
+;(otherArr.length as number) = 123 // 只读属性不可更改长度
+
+// error.  error msg: 只读属性的数组(或其他类型)不可赋值于其他变量
+// suchNumber = otherArr     // fail error!
+
+// // 改变只读属性的办法是：使用类型断言重写此变量(注意：不支持01010110 这样的八进制，但是支持类似0o1)。
+suchNumber.push(123, 999, 312, 0o1) as number
 
 reveiveResult = suchNumber

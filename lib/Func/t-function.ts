@@ -1,16 +1,15 @@
-import { expect } from "chai";
+import { expect } from 'chai'
 
 interface Action<T> {
-    payload?: T;
-    type: string;
+    payload?: T
+    type: string
 }
 
 type Connected = {
-    school: school,
-    delay(input: number): Action<string>,
+    school: school
+    delay(input: number): Action<string>
     setMessage(action: Date): Action<number>
-};
-
+}
 
 type FunctionPropertyNames<T> = {
     [K in keyof T]: T[K] extends Function ? K : never
@@ -23,20 +22,20 @@ let only_func: PickOnlyFuncType<Connected> = {
     delay() {
         return {
             payload: 'ss',
-            type: '2'
+            type: '2',
         }
     },
     setMessage(action) {
         return {
             payload: action.getMilliseconds(),
-            type: '2'
+            type: '2',
         }
-    }
+    },
 }
 
-type someso = { 
-    school: school,
-    n: number,
+type someso = {
+    school: school
+    n: number
     r: RegExp
 }
 
@@ -47,4 +46,4 @@ type str = P<someso, 'school'>
 // 最后根据第二个选择的 类型键 渲染对应的数据类型
 type P<T, U extends keyof T> = {
     [K in U]: T[K]
-} 
+}
