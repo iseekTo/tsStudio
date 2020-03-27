@@ -38,12 +38,12 @@ export function generErrorObj() {
 let suchNumber: number[] = [1, 2, 3, 4, 5]
 let otherArr: ReadonlyArray<number> = suchNumber
 export let reveiveResult: number[]
-// otherArr[1] = 2  // error.  error msg: 类型“readonly number[]”中的索引签名仅允许读取
+    // otherArr[1] = 2  // error.  error msg: 类型“readonly number[]”中的索引签名仅允许读取
 
-// error msg: 类型“readonly number[]”上不存在属性“push”。
-// otherArr.push(1)          // fail error!
+    // error msg: 类型“readonly number[]”上不存在属性“push”。
+    // otherArr.push(1)          // fail error!
 
-// error msg: Cannot assign to 'length' because it is a read-only property.
+    // error msg: Cannot assign to 'length' because it is a read-only property.
 ;(otherArr.length as number) = 123 // 只读属性不可更改长度
 
 // error.  error msg: 只读属性的数组(或其他类型)不可赋值于其他变量

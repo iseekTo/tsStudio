@@ -1,6 +1,7 @@
 import { Dictory } from './generic/q'
 
 console.log('--------------------------------------------')
+
 const littleNumbers = [
     { a: 1, b: '123' },
     { a: 2, b: '22223' },
@@ -32,6 +33,6 @@ console.log(trys, bol)
 //     console.log('callback 飞鸟')
 // })
 
-// returnFn(() => {
-//     console.log(['1', '2'], '函数返回值')
-// })
+const props = {
+    func: (): void => console.log('func'),
+}

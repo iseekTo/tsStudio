@@ -1,4 +1,7 @@
-import { expect } from 'chai'
+/**
+ * @created in 2020/03/27
+ * @author lyb
+ */
 
 interface Action<T> {
     payload?: T
@@ -10,8 +13,6 @@ type Connected = {
     delay(input: number): Action<string>
     setMessage(action: Date): Action<number>
 }
-
-
 
 type FunctionPropertyNames<T> = {
     [K in keyof T]: T[K] extends Function ? K : never
