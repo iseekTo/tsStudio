@@ -12,7 +12,7 @@ export const delAfterStr = (sourceVal: string, symbols: string): string =>
  * @Quote of Redux
  * @returns 是否是一个简单的对象
  */
-export const isPlainObject = (obj: object) => {
+export const isPlainObject = (obj: object): boolean => {
     if (typeof obj !== 'object' || typeof obj === null) return false;
     let proto = obj;
     while (Object.getPrototypeOf(proto) !== null) {
@@ -21,11 +21,14 @@ export const isPlainObject = (obj: object) => {
     return Object.getPrototypeOf(obj) === proto;
 };
 
-export const isString = (str: unknown): str is string => typeof str === 'string';
+export const isString = (str: unknown): str is string =>
+    typeof str === 'string';
 
-export const isBoolean = (bol: unknown): bol is boolean => typeof bol === 'boolean';
+export const isBoolean = (bol: unknown): bol is boolean =>
+    typeof bol === 'boolean';
 
-export const isNumber = (nur: unknown): nur is number => typeof nur === 'number';
+export const isNumber = (nur: unknown): nur is number =>
+    typeof nur === 'number';
 
 export const isRegExp = (reg: unknown): reg is RegExp => {
     return '[object RegExp]' === obj.toString.call(reg);

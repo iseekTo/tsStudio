@@ -1,32 +1,32 @@
 export type stringOrArr = string[] | string;
 
-interface IBook {
+interface Ibook {
     price?: number;
     label?: stringOrArr;
     where?: stringOrArr;
-    [x: string]: any;
+    [x: string]: Ibook[keyof Ibook];
 }
 
-const book: IBook = {
+const book: Ibook = {
     price: 200,
     label: 'GG',
     where: '天河以南',
-    other_key_1: 'other_key_1',
-    other_key_2: 'other_key_2',
+    osKey1: 'other_key_1',
+    osKey2: 'other_key_2',
 };
 
-const base: any = [];
+const base: Ibook[] = [];
 /**
  * @description 常规遍历：错误
  * 错误信息：Element implicitly has an 'any' type because expression of type 'string' can't be used to index type 'IBook'
- * 解析：声明的 IBook 接口含有隐式any类型，给其扩展一个自由属性即可 [x: string]: any
+ * 解析：声明的 IBook 接口含有隐式any类型，给其扩展一个自由属性即可 [x: string]: Ibook[keyof Ibook]
  */
-export function generErrorObj(): IBook[] {
+export function generErrorObj(): Ibook[] {
     let k: string;
     for (k in book) {
         if (book.hasOwnProperty(k)) {
             const element = book[k];
-            base.push(element);
+            base.push(element as never);
         }
     }
     return base;
@@ -39,12 +39,12 @@ export function generErrorObj(): IBook[] {
 const suchNumber: number[] = [1, 2, 3, 4, 5];
 const otherArr: ReadonlyArray<number> = suchNumber;
 export let reveiveResult: number[];
-    // otherArr[1] = 2  // error.  error msg: 类型“readonly number[]”中的索引签名仅允许读取
+// otherArr[1] = 2  // error.  error msg: 类型“readonly number[]”中的索引签名仅允许读取
 
-    // error msg: 类型“readonly number[]”上不存在属性“push”。
-    // otherArr.push(1)          // fail error!
+// error msg: 类型“readonly number[]”上不存在属性“push”。
+// otherArr.push(1)          // fail error!
 
-    // error msg: Cannot assign to 'length' because it is a read-only property.
+// error msg: Cannot assign to 'length' because it is a read-only property.
 (otherArr.length as number) = 123; // 只读属性不可更改长度
 
 // error.  error msg: 只读属性的数组(或其他类型)不可赋值于其他变量

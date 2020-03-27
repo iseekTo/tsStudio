@@ -36,9 +36,8 @@ const onlyFunc: PickOnlyFuncType<Connected> = {
     },
 };
 
-
 onlyFunc.delay(300);
-onlyFunc.setMessage()
+onlyFunc.setMessage();
 
 type someso = {
     school: school;
