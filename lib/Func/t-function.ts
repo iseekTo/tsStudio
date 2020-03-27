@@ -34,7 +34,7 @@ let only_func: PickOnlyFuncType<Connected> = {
     }
 }
 
-type someso = {
+type someso = { 
     school: school,
     n: number,
     r: RegExp
