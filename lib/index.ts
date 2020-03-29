@@ -1,7 +1,26 @@
+/*
+ * @Date: 2019-11-08 17:10:46
+ * @Author: lyb
+ * @LastEditors: lyb
+ * @LastEditTime: 2020-03-29 14:16:00
+ */
 import { Dictory } from './generic/q';
 
 console.log('--------------------------------------------');
 
+const obj = {
+    s: 2,
+    d: {
+        _d: 'ddd',
+    },
+    f: {
+        _f: 'fff',
+        __f: {
+            _df: 'd_f',
+        },
+    },
+};
+console.log(obj, 'ojb');
 
 const littleNumbers = [
     { a: 1, b: '123' },

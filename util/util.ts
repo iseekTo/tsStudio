@@ -1,3 +1,9 @@
+/*
+ * @Date: 2019-11-08 16:42:28
+ * @Author: lyb
+ * @LastEditors: lyb
+ * @LastEditTime: 2020-03-29 14:15:31
+ */
 const obj = Object.prototype;
 
 /**
@@ -33,3 +39,14 @@ export const isNumber = (nur: unknown): nur is number =>
 export const isRegExp = (reg: unknown): reg is RegExp => {
     return '[object RegExp]' === obj.toString.call(reg);
 };
+
+const findFirst = <L>(list: Array<L>, f: Function): cacheType => {
+    return list.filter(f)[0];
+}
+
+
+type cacheType = {
+    original: object;
+    copy: unknown;
+}
+

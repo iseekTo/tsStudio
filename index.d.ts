@@ -4,7 +4,7 @@
 declare const DEV: string;
 
 declare interface IPos extends IOpt {
-    some: string
+    some: string;
 }
 
 

@@ -10,14 +10,14 @@ export type Readonly_m<T> = {
     readonly [P in keyof T]: T[P];
 };
 // 对外导出原生 Object.freeze() 的实现
-export let onlyGenrics = <T>(local: T): Readonly_m<T> => {
+export const onlyGenrics = <T>(local: T): Readonly_m<T> => {
     return local;
 };
-let onlyObj = {
+const onlyObj = {
     s: '',
     w: false,
 };
-let bingo = onlyGenrics(onlyObj); // 不可改变bingo的key值
+const bingo = onlyGenrics(onlyObj); // 不可改变bingo的key值
 // bingo.w = true  // err  Cannot assign to 'w' because it is a read-only property.ts(2540)
 
 // [x in xxx] --> xxx 只能为 symbol string(任意string类型的参数值，number同样) number any
@@ -31,7 +31,7 @@ type test_inKey = 'name' | 'sex';
 export type infite = {
     [x in test_inKey | 'other']: string;
 };
-let oq: infite = {
+const oq: infite = {
     name: '123',
     sex: '男',
     other: '...some value',

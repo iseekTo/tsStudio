@@ -20,7 +20,8 @@
   "include": [
     ".lib/.ts",
     "lib/**/*",    
-    "./index.d.ts",
+    "./index.d.ts", 
+    "util",
   ],
   "typeRoots": [
     "./index.d.ts",
