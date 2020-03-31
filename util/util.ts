@@ -2,7 +2,7 @@
  * @Date: 2019-11-08 16:42:28
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-03-29 14:15:31
+ * @LastEditTime: 2020-03-29 20:25:04
  */
 const obj = Object.prototype;
 
@@ -50,3 +50,25 @@ type cacheType = {
     copy: unknown;
 }
 
+
+export const deepCopy = (obj: unknown): unknown => {
+    let copy: unknown = {};
+    if (obj === null || typeof obj !== 'object') {
+        return obj
+    }
+
+    const siuteType = obj?.constructor.name;
+
+    if (siuteType === 'Array') {
+        copy = []
+    }
+
+    if (siuteType === 'Object') {
+        copy = {}
+    }
+
+    for (const k in obj) {
+        copy[k] = deepCopy(obj[k])
+    }
+    return copy;
+} 

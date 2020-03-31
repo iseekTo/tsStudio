@@ -1,3 +1,9 @@
+/*
+ * @Date: 2020-03-27 11:46:15
+ * @Author: lyb
+ * @LastEditors: lyb
+ * @LastEditTime: 2020-03-30 13:19:59
+ */
 /**
  * @created in 2020/03/27
  * @author lyb
@@ -7,6 +13,7 @@ interface Action<T> {
     payload?: T;
     type: string;
 }
+
 
 type Connected = {
     school: school;
