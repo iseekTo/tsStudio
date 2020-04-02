@@ -2,7 +2,7 @@
  * @Date: 2020-03-27 11:46:15
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-03-30 13:19:59
+ * @LastEditTime: 2020-04-02 15:24:23
  */
 /**
  * @created in 2020/03/27
@@ -21,11 +21,20 @@ type Connected = {
     setMessage(action?: Date): Action<number>;
 };
 
+// 筛选只能是函数的key集合
 type FunctionPropertyNames<T> = {
     [K in keyof T]: T[K] extends Function ? K : never;
 }[keyof T];
 
-type PickOnlyFuncType<T> = Pick<T, FunctionPropertyNames<T>>;
+// 使用 Pick泛型 将类型重组
+type PickOnlyFuncType<T> = Pick< T, FunctionPropertyNames<T> >;
+
+type chars = Omit<Connected, 'school'>;
+
+// emmm 🥶🥶 Suffocating operation 🥶🥶 
+type _Omit<T, K extends keyof T> = Pick< T, Exclude<keyof T, K> >
+
+type f = _Omit<Connected, 'school'>
 
 // 仅挑选函数类型
 const onlyFunc: PickOnlyFuncType<Connected> = {
