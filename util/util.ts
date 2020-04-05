@@ -2,7 +2,7 @@
  * @Date: 2019-11-08 16:42:28
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-03-29 20:25:04
+ * @LastEditTime: 2020-04-05 18:38:22
  */
 const obj = Object.prototype;
 
@@ -39,36 +39,3 @@ export const isNumber = (nur: unknown): nur is number =>
 export const isRegExp = (reg: unknown): reg is RegExp => {
     return '[object RegExp]' === obj.toString.call(reg);
 };
-
-const findFirst = <L>(list: Array<L>, f: Function): cacheType => {
-    return list.filter(f)[0];
-}
-
-
-type cacheType = {
-    original: object;
-    copy: unknown;
-}
-
-
-export const deepCopy = (obj: unknown): unknown => {
-    let copy: unknown = {};
-    if (obj === null || typeof obj !== 'object') {
-        return obj
-    }
-
-    const siuteType = obj?.constructor.name;
-
-    if (siuteType === 'Array') {
-        copy = []
-    }
-
-    if (siuteType === 'Object') {
-        copy = {}
-    }
-
-    for (const k in obj) {
-        copy[k] = deepCopy(obj[k])
-    }
-    return copy;
-} 
