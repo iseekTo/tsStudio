@@ -2,7 +2,7 @@
  * @Date: 2019-11-08 16:42:28
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-04-05 18:38:22
+ * @LastEditTime: 2020-04-06 22:09:36
  */
 const obj = Object.prototype;
 
@@ -39,3 +39,8 @@ export const isNumber = (nur: unknown): nur is number =>
 export const isRegExp = (reg: unknown): reg is RegExp => {
     return '[object RegExp]' === obj.toString.call(reg);
 };
+
+
+export const handleCat = (animalType: import('../runtime/').typeAnimal): string => {
+    return animalType;
+}
