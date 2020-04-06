@@ -2,7 +2,7 @@
  * @Date: 2019-11-08 17:10:46
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-04-06 22:19:14
+ * @LastEditTime: 2020-04-06 22:19:57
  */
 import { Dictory } from './generic/q';
 import { handleCat } from '../util/util';
@@ -17,6 +17,7 @@ const od = {
     base: 'BASE'
 }
 
+// 不知道类型怎么写了，可以先写一个js范例，然后用 typeof显示
 type od = typeof od;
 
 type anysh = {
