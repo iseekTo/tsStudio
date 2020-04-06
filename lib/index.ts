@@ -2,7 +2,7 @@
  * @Date: 2019-11-08 17:10:46
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-04-06 22:09:49
+ * @LastEditTime: 2020-04-06 22:19:14
  */
 import { Dictory } from './generic/q';
 import { handleCat } from '../util/util';
@@ -10,6 +10,19 @@ import { handleCat } from '../util/util';
 console.log('--------------------------------------------');
 
 const h = handleCat('dog');
+
+const od = {
+    os: [2, [22], true],
+    f: (): number => 3,
+    base: 'BASE'
+}
+
+type od = typeof od;
+
+type anysh = {
+    os: (string | boolean[] | number)[];
+    bl?: () => number;
+}
 
 
 const littleNumbers = [
