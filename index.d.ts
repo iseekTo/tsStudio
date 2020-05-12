@@ -2,7 +2,7 @@
  * @Date: 2020-03-27 11:46:15
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-04-05 18:19:38
+ * @LastEditTime: 2020-05-12 14:46:49
  */
 // reference 代表普通文件里的 import 关键字
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
@@ -10,10 +10,9 @@
 
 declare const DEV: string;
 
-declare interface Ipos extends IOpt {
+declare interface Ipos extends Opt {
     some: string;
 }
-
 
 // ## 找不到第三方模块时，有两种方法可以消除ts的报警
 
@@ -24,4 +23,3 @@ declare const yourModuleName: unknown;
 declare module 'yourModuleName' {
     export = yourModuleName
 }
-

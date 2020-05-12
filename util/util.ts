@@ -2,7 +2,7 @@
  * @Date: 2019-11-08 16:42:28
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-04-06 22:09:36
+ * @LastEditTime: 2020-05-12 14:53:11
  */
 const obj = Object.prototype;
 
@@ -13,19 +13,6 @@ const obj = Object.prototype;
  * */
 export const delAfterStr = (sourceVal: string, symbols: string): string =>
     sourceVal.substring(0, sourceVal.indexOf(symbols));
-
-/**
- * @Quote of Redux
- * @returns 是否是一个简单的对象
- */
-export const isPlainObject = (obj: object): boolean => {
-    if (typeof obj !== 'object' || typeof obj === null) return false;
-    let proto = obj;
-    while (Object.getPrototypeOf(proto) !== null) {
-        proto = Object.getPrototypeOf(proto);
-    }
-    return Object.getPrototypeOf(obj) === proto;
-};
 
 export const isString = (str: unknown): str is string =>
     typeof str === 'string';
