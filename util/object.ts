@@ -2,7 +2,7 @@
  * @Date: 2020-05-12 14:45:16
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-05-12 17:08:19
+ * @LastEditTime: 2020-05-12 17:17:29
  */
 
 type keyString = {
@@ -10,7 +10,7 @@ type keyString = {
 }
 
 /** 是否是对象 */
-export const isObject = (obj: object): boolean => typeof obj !== 'object' || typeof obj !== null
+export const isObject = (obj: object): boolean => typeof obj === 'object' && typeof obj !== null
 
 /**
  * @Quote of Redux
