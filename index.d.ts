@@ -2,7 +2,7 @@
  * @Date: 2020-03-27 11:46:15
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-05-12 14:46:49
+ * @LastEditTime: 2020-06-06 17:31:35
  */
 // reference 代表普通文件里的 import 关键字
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference
@@ -13,6 +13,9 @@ declare const DEV: string;
 declare interface Ipos extends Opt {
     some: string;
 }
+
+// 增加window对象的定义
+declare const _window: Window
 
 // ## 找不到第三方模块时，有两种方法可以消除ts的报警
 

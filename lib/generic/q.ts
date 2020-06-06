@@ -1,3 +1,12 @@
+/*
+ * @Date: 2019-12-08 17:03:52
+ * @Author: lyb
+ * @LastEditors: lyb
+ * @LastEditTime: 2020-06-05 10:25:05
+ */ 
+/* eslint-disable @typescript-eslint/class-name-casing */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/camelcase */
 // 泛型接收的第一个类型假设是string(D)，则子类型都是string(D)
 export type Dictory<D> = {
     [k: string]: D;
@@ -9,6 +18,7 @@ export type Dictory<D> = {
 export type Readonly_m<T> = {
     readonly [P in keyof T]: T[P];
 };
+
 // 对外导出原生 Object.freeze() 的实现
 export const onlyGenrics = <T>(local: T): Readonly_m<T> => {
     return local;

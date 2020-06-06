@@ -2,7 +2,7 @@
  * @Date: 2020-05-12 14:45:16
  * @Author: lyb
  * @LastEditors: lyb
- * @LastEditTime: 2020-05-12 17:17:29
+ * @LastEditTime: 2020-06-06 17:34:51
  */
 
 type keyString = {
@@ -51,4 +51,23 @@ export const toObject = (ary: Array<keyString>): object => {
         }
     }
     return obj
+}
+
+/**
+ * @description 约束全局对象，禁止修改
+ * @created 2020年06月06日17:21:40
+ * @author lyb
+ * @use 
+ *     GlobalDefineConst(_env, 'production')
+ *     _env -> 'production'  -> can not modify
+ */
+export const GlobalDefineConst = <T>(variable: string, value: T): Error | T => {
+    return Object.defineProperty(_window, variable, {
+        set() {
+            throw 'Not Allow Assignment to constant variable'
+        },
+        get() {
+            return value
+        }
+    })
 }
